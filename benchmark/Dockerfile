@@ -3,7 +3,9 @@ FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y curl git gawk gnupg openssl dirmngr unzip time
 
 # Needs seperate shell (and layer) to load all PATHs created by the previous step
-RUN curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell && \
+RUN curl -fsSL https://github.com/sharkdp/hyperfine/releases/download/v1.12.0/hyperfine_1.12.0_amd64.deb >> hyperfine.deb && \
+   dpkg -i hyperfine.deb && \
+   curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell && \
    # Volta
    curl https://get.volta.sh | bash -s -- --skip-setup && \
    # asdf
