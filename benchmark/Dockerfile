@@ -16,4 +16,6 @@ RUN curl -fsSL https://github.com/sharkdp/hyperfine/releases/download/v1.12.0/hy
    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /benchmark/
-COPY .bashrc* ./
+COPY .bashrc* run.sh ./
+
+CMD ./run.sh
