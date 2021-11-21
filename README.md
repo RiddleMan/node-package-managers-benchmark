@@ -1,2 +1,2 @@
-# node-package-managers-benchmark
+# node-version-managers-benchmark
 Benchmarks nvm, fnm, volta, asdf.
